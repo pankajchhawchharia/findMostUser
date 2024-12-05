@@ -1,0 +1,21 @@
+function findMostUser(userName) {
+    let count =0;
+    let char ="";
+    let userNameCopy = userName;
+    let maxCount = 0;
+    for (let i=0;i<userName.length;i++) {
+        for (let j=0;j<userNameCopy.length;j++) {
+            if(userName[i].includes(userNameCopy[j])){
+                count++;
+            }
+        }
+             if(count>maxCount) {
+            maxCount = count;
+            char = userName[i];
+        }
+        count = 0;
+    }
+    return `${char} ${maxCount}`;
+    
+}
+console.log(findMostUser(["q","q"]));
